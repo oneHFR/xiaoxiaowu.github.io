@@ -1,5 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小小吴 提桶跑路 Blog</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link><description>check the first blog👌: [Original purpose for this blog web]</description><copyright>小小吴 提桶跑路 Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pbs.twimg.com/profile_images/1831494246718959622/uKZLFSPM_400x400.jpg</url><title>avatar</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link></image><lastBuildDate>Mon, 16 Sep 2024 13:10:04 +0000</lastBuildDate><managingEditor>小小吴 提桶跑路 Blog</managingEditor><ttl>60</ttl><webMaster>小小吴 提桶跑路 Blog</webMaster><item><title>Original purpose for this blog web</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io/post/Original%20purpose%20for%20this%20blog%20web.html</link><description>### BG 🤗🐑&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小小吴 提桶跑路 Blog</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link><description>check the first blog👌: [Original purpose for this blog web]</description><copyright>小小吴 提桶跑路 Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pbs.twimg.com/profile_images/1831494246718959622/uKZLFSPM_400x400.jpg</url><title>avatar</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link></image><lastBuildDate>Tue, 17 Sep 2024 04:02:20 +0000</lastBuildDate><managingEditor>小小吴 提桶跑路 Blog</managingEditor><ttl>60</ttl><webMaster>小小吴 提桶跑路 Blog</webMaster><item><title>Academic Reading Recording</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io/post/Academic%20Reading%20Recording.html</link><description>&lt;table&gt;&#13;
+    &lt;tr&gt;&#13;
+        &lt;td valign='top' width='300'&gt;&#13;
+            &lt;p&gt;&lt;b&gt;Read Data:&lt;/b&gt; 0825&lt;/p&gt;&#13;
+        &lt;/td&gt;&#13;
+        &lt;td colspan='3' valign='top' width='300'&gt;&#13;
+            &lt;p&gt;&lt;b&gt;Publication:&lt;/b&gt; CVPR 2021&lt;/p&gt;&#13;
+        &lt;/td&gt;&#13;
+    &lt;/tr&gt;&#13;
+    &lt;tr&gt;&#13;
+        &lt;td colspan='4' valign='top' width='600'&gt;&#13;
+            &lt;b&gt;Title:&lt;/b&gt;&#13;
+            &lt;p&gt;Verifiability and Predictability: Interpreting Utilities of Network Architectures for Point Cloud Processing&lt;/p&gt;&#13;
+            &lt;b&gt;Participants:&lt;/b&gt;&#13;
+            &lt;p&gt;Wen Shen, Zhihua Wei, Shikun Huang, Binbin Zhang, Panyue Chen, Ping Zhao, Quanshi Zhang&lt;/p&gt;&#13;
+        &lt;/td&gt;&#13;
+    &lt;/tr&gt;&#13;
+    &lt;tr&gt;&#13;
+        &lt;td valign='top' width='300'&gt;&#13;
+            &lt;p&gt;&lt;b&gt;Aim:&lt;/b&gt;&lt;/p&gt;&#13;
+            &lt;p&gt;研究目标是在中间层架构和它的效用之间架起一座桥梁。</description><guid isPermaLink="true">https://oneHFR.github.io/xiaoxiaowu.github.io/post/Academic%20Reading%20Recording.html</guid><pubDate>Tue, 17 Sep 2024 04:01:58 +0000</pubDate></item><item><title>Original purpose for this blog web</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io/post/Original%20purpose%20for%20this%20blog%20web.html</link><description>### BG 🤗🐑&#13;
 Well I just an undergraduate student who has just switched from civil engineering to computer science. I hope to document my gradual growth process! I wish to keep writing daily summaries, continuously reflect on myself, and keep making progress!&#13;
 &#13;
 And right now it is 2024.09.16 I am in my junior year and literally I only know a little about python and c++ and some other basic theoretical course knowledge (will be forgotten in the short term for sure haha)&#13;
