@@ -72,7 +72,11 @@
     <tr>
         <td colspan="6" valign="top" width="1000">
             <p><b>Ref:</b></p>
-            <p>&nbsp;</p>
+            <p>
+PointCLIP: Point Cloud Understanding by CLIP (url = )
+
+
+</p>
         </td>
     </tr>
 </table>
