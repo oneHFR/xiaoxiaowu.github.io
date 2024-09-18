@@ -111,6 +111,7 @@ def hello_world():
 ```
 **`open-vocabulary detection`**
 [paper](https://github.com/oneHFR/xiaoxiaowu.github.io/blob/main/OVD_files/paper/Lu_Open-Vocabulary_Point-Cloud_Object_Detection_Without_3D_Annotation_CVPR_2023_paper.pdf)
+😈 → ▶️➡️↪️➕✔️
 
 
 
