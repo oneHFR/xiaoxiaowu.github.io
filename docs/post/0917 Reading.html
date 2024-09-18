@@ -10,17 +10,27 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="### 1. Pick up
+<meta name="description" content="### 0. To Do
+
+1. 数学公式的输入和理解  ➡️  论文数学表达式的基本理解
+2. 代码没有跑过  ➡️  Pytorch的入门
+3. 在网页上编辑还是太难了 转到本地VScode会不会快捷键缩进之类好一些？  ➡️  及时渲染的插件
+
+### 1. Pick up
 
 1. **`open-vocabulary detection`** ➡️ The goal of **`open-vocabulary detection`** is to identify novel objects based on arbitrary textual descriptions.
+&nbsp;&nbsp;&nbsp;&nbsp;  ➡️ **`open-vocabulary detection`** (or known as zero-shot ) targets to detect the novel classes that are not provided labels during training which usually accompanied by arbitrary text description // 开放词汇表目标检测 目标为检测出在训练中没有提供标签的新类 通常伴随着任意的文本描述
 2. **`unseen objects`** ➡️ novel objects **`unseen objects`** , namely, not ever defined and trained by the already deployed 3D systems.
-3. **`vision-language pre-trained models/detector`** ➡️e.g. [CLIP](https://openai.com/index/clip/)
-4. **`2D image pre-trained models`**  ➡️e.g. [Detic](https://arxiv.org/pdf/2201.02605)
-5. **`point-cloud detector`** ➡️
-6. **`point-cloud embeddings`** ➡️
-7. **` `** ➡️
-8. **` `** ➡️
-9. **` `** ➡️
+4. **`vision-language pre-trained models/detector`** ➡️e.g. [CLIP](https://openai.com/index/clip/)
+5. **`2D image pre-trained models`**  ➡️e.g. [Detic](https://arxiv.org/pdf/2201.02605)&nbsp;&nbsp; [Mask R-CNN](https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf)&nbsp;&nbsp; [Fast R-CNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Girshick_Fast_R-CNN_ICCV_2015_paper.pdf) etc.
+6. **`point-cloud detector`** ➡️
+7. **`image-text pairs`** ➡️
+8. **`semantics`** ➡️
+9. **`embedding layer`** ➡️
+10. **`point-cloud embeddings`** ➡️
+11. **` `** ➡️
+12. **` `** ➡️
+13. **` `** ➡️
 
 ### 2. Reading table
 <table>
@@ -42,6 +52,13 @@
 </p>
             <b>Participants:</b>
             <p>Yuheng Lu 1∗, Chenfeng Xu 2∗</p>
+</p>
+            <b>Dataset:</b>
+            <p>
+<a href = 'https://paperswithcode.com/dataset/sun-rgb-d'>
+<b>[SUN RGB]</b></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href = 'https://paperswithcode.com/dataset/scannet'>
+<b>[ScanNet]</b></a>
+</p>
         </td>
     </tr>
     <tr>
@@ -49,7 +66,7 @@
             <p><b>Introduction:</b></p>
             <p>
 
-1. 点云检测器在有限数量对象上训练 ≠ 解释现实的对象 // Current SOTA point-cloud detectors are trained on a limited classes ≠ classes in the real world.
+1. 点云检测器在有限数量对象上训练 无法扩展到 现实丰富的对象 // Current SOTA point-cloud detectors are trained on a limited classes ≠ classes in the real world.
 &nbsp;&nbsp;&nbsp;&nbsp;↪️检测器不能推广看不见对象 // detectors fail to generalize to   **`unseen object`**   classes
 2. 开放词汇表检测需要模型学习一般的表示并将其与文本联系 // open-vocabulary detection requires the model to learn general representations and relate those representations to text cues.
 &nbsp;&nbsp;&nbsp;&nbsp;↪️点云领域数据收集和注释的困难 //  the difficulty of both data collection and annotation.
@@ -82,19 +99,45 @@
         </td>
     </tr>
     <tr>
+        <td valign='top' width='1000' colspan='5'>
+            <p><b>Related Work:</b></p>
+<p>
+
+**1. Open-Vocabulary 2D and 3D Detection**
+【待总结】
+
+**2. Weakly-Supervised Detection**
+【待总结】
+
+</p>
+        </td>
+    </tr>
+    <tr>
         <td colspan='6' valign='top' width='1000'>
             <p>
 
-~~#### Framework
+~~#### Framework Overview:
 **`OV-3DET`** is a divide-and conquer method ➡️ two stages
 ① **`point-cloud detector`** learns to localize the unknown objects
 ② **`point-cloud detector`** learns to name them according to the text prompts.~~
-#### Method
-💡① 直接使用二维预训练的检测器在相应的图像中生成一系列二维边界框或二维实例掩码 // directly take **`2D image pre-trained detector`** to generate a series of 2D bounding boxes or 2D instance masks in the corresponding images. 
+
+#### Method:（和·framework的序号顺序是一致的）
+💡**① 【Localization 从二维预训练的检测器中获得定位能力】**
+&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 直接使用二维预训练的检测器在相应的图像中生成一系列二维边界框或二维实例掩码 // directly take **`2D image pre-trained detector`** to generate a series of 2D bounding boxes or 2D instance masks in the corresponding images. 
+&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the **`predicted 2D bounding boxes`** as the **`pseudo bounding box`** of the point-cloud detector after transforming the **`frustum`** into relatively tight bounding box according to the **point-cloud geometry**, as shown in Fig. 2.
+
+<div align='center'>
+    <img src='https://github.com/user-attachments/assets/14935857-38d9-4714-962c-9104438bb1e9' width='500'>
+ <em>Fig 2</em>
+</div>
+&nbsp;
+
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 没有使用 class labels predicted by **`2D image pre-trained detector`**
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 使用粗糙的二维边界框或二维实例掩码来监督3D点云检测器来学习定位3D对象 // use the coarse 2D bounding boxes or 2D instance masks to supervise **`3D point-cloud detectors`** to learn localizing 3D objects.
 
-💡②  提出一种去偏三重态跨模态对比学习方法来将点云、图像和文本联系起来 // propose a **`de-biased triplet cross-modal contrastive learning method`** to connect the modalities among point-cloud, image, and text
+
+💡**② 【Classification 跨模态将点云对象进行分类】**
+&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 提出一种 **去偏三重态跨模态对比学习方法** 来将点云、图像和文本联系起来 // propose a **`de-biased triplet cross-modal contrastive learning method`** to connect the modalities among point-cloud, image, and text
 &nbsp;&nbsp;&nbsp;&nbsp;✔️ 使点云检测器能够将对象与相应的文本描述联系起来 // **`point-cloud detector`** is able to relate the objects with corresponding text descriptions. 
 &nbsp;&nbsp;&nbsp;&nbsp;✔️ 在推理过程中，只使用点云检测器和文本提示 // During inference, only **`point-cloud detector`** and  **`text prompts`** are used.
 
@@ -140,17 +183,27 @@
 > 下面是github文本框的markdown强调用法举例？
 >这是一个引用块，可以用来高亮显示重要信息。">
 <meta property="og:title" content="0917 Reading">
-<meta property="og:description" content="### 1. Pick up
+<meta property="og:description" content="### 0. To Do
+
+1. 数学公式的输入和理解  ➡️  论文数学表达式的基本理解
+2. 代码没有跑过  ➡️  Pytorch的入门
+3. 在网页上编辑还是太难了 转到本地VScode会不会快捷键缩进之类好一些？  ➡️  及时渲染的插件
+
+### 1. Pick up
 
 1. **`open-vocabulary detection`** ➡️ The goal of **`open-vocabulary detection`** is to identify novel objects based on arbitrary textual descriptions.
+&nbsp;&nbsp;&nbsp;&nbsp;  ➡️ **`open-vocabulary detection`** (or known as zero-shot ) targets to detect the novel classes that are not provided labels during training which usually accompanied by arbitrary text description // 开放词汇表目标检测 目标为检测出在训练中没有提供标签的新类 通常伴随着任意的文本描述
 2. **`unseen objects`** ➡️ novel objects **`unseen objects`** , namely, not ever defined and trained by the already deployed 3D systems.
-3. **`vision-language pre-trained models/detector`** ➡️e.g. [CLIP](https://openai.com/index/clip/)
-4. **`2D image pre-trained models`**  ➡️e.g. [Detic](https://arxiv.org/pdf/2201.02605)
-5. **`point-cloud detector`** ➡️
-6. **`point-cloud embeddings`** ➡️
-7. **` `** ➡️
-8. **` `** ➡️
-9. **` `** ➡️
+4. **`vision-language pre-trained models/detector`** ➡️e.g. [CLIP](https://openai.com/index/clip/)
+5. **`2D image pre-trained models`**  ➡️e.g. [Detic](https://arxiv.org/pdf/2201.02605)&nbsp;&nbsp; [Mask R-CNN](https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf)&nbsp;&nbsp; [Fast R-CNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Girshick_Fast_R-CNN_ICCV_2015_paper.pdf) etc.
+6. **`point-cloud detector`** ➡️
+7. **`image-text pairs`** ➡️
+8. **`semantics`** ➡️
+9. **`embedding layer`** ➡️
+10. **`point-cloud embeddings`** ➡️
+11. **` `** ➡️
+12. **` `** ➡️
+13. **` `** ➡️
 
 ### 2. Reading table
 <table>
@@ -172,6 +225,13 @@
 </p>
             <b>Participants:</b>
             <p>Yuheng Lu 1∗, Chenfeng Xu 2∗</p>
+</p>
+            <b>Dataset:</b>
+            <p>
+<a href = 'https://paperswithcode.com/dataset/sun-rgb-d'>
+<b>[SUN RGB]</b></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href = 'https://paperswithcode.com/dataset/scannet'>
+<b>[ScanNet]</b></a>
+</p>
         </td>
     </tr>
     <tr>
@@ -179,7 +239,7 @@
             <p><b>Introduction:</b></p>
             <p>
 
-1. 点云检测器在有限数量对象上训练 ≠ 解释现实的对象 // Current SOTA point-cloud detectors are trained on a limited classes ≠ classes in the real world.
+1. 点云检测器在有限数量对象上训练 无法扩展到 现实丰富的对象 // Current SOTA point-cloud detectors are trained on a limited classes ≠ classes in the real world.
 &nbsp;&nbsp;&nbsp;&nbsp;↪️检测器不能推广看不见对象 // detectors fail to generalize to   **`unseen object`**   classes
 2. 开放词汇表检测需要模型学习一般的表示并将其与文本联系 // open-vocabulary detection requires the model to learn general representations and relate those representations to text cues.
 &nbsp;&nbsp;&nbsp;&nbsp;↪️点云领域数据收集和注释的困难 //  the difficulty of both data collection and annotation.
@@ -212,19 +272,45 @@
         </td>
     </tr>
     <tr>
+        <td valign='top' width='1000' colspan='5'>
+            <p><b>Related Work:</b></p>
+<p>
+
+**1. Open-Vocabulary 2D and 3D Detection**
+【待总结】
+
+**2. Weakly-Supervised Detection**
+【待总结】
+
+</p>
+        </td>
+    </tr>
+    <tr>
         <td colspan='6' valign='top' width='1000'>
             <p>
 
-~~#### Framework
+~~#### Framework Overview:
 **`OV-3DET`** is a divide-and conquer method ➡️ two stages
 ① **`point-cloud detector`** learns to localize the unknown objects
 ② **`point-cloud detector`** learns to name them according to the text prompts.~~
-#### Method
-💡① 直接使用二维预训练的检测器在相应的图像中生成一系列二维边界框或二维实例掩码 // directly take **`2D image pre-trained detector`** to generate a series of 2D bounding boxes or 2D instance masks in the corresponding images. 
+
+#### Method:（和·framework的序号顺序是一致的）
+💡**① 【Localization 从二维预训练的检测器中获得定位能力】**
+&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 直接使用二维预训练的检测器在相应的图像中生成一系列二维边界框或二维实例掩码 // directly take **`2D image pre-trained detector`** to generate a series of 2D bounding boxes or 2D instance masks in the corresponding images. 
+&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the **`predicted 2D bounding boxes`** as the **`pseudo bounding box`** of the point-cloud detector after transforming the **`frustum`** into relatively tight bounding box according to the **point-cloud geometry**, as shown in Fig. 2.
+
+<div align='center'>
+    <img src='https://github.com/user-attachments/assets/14935857-38d9-4714-962c-9104438bb1e9' width='500'>
+ <em>Fig 2</em>
+</div>
+&nbsp;
+
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 没有使用 class labels predicted by **`2D image pre-trained detector`**
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 使用粗糙的二维边界框或二维实例掩码来监督3D点云检测器来学习定位3D对象 // use the coarse 2D bounding boxes or 2D instance masks to supervise **`3D point-cloud detectors`** to learn localizing 3D objects.
 
-💡②  提出一种去偏三重态跨模态对比学习方法来将点云、图像和文本联系起来 // propose a **`de-biased triplet cross-modal contrastive learning method`** to connect the modalities among point-cloud, image, and text
+
+💡**② 【Classification 跨模态将点云对象进行分类】**
+&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 提出一种 **去偏三重态跨模态对比学习方法** 来将点云、图像和文本联系起来 // propose a **`de-biased triplet cross-modal contrastive learning method`** to connect the modalities among point-cloud, image, and text
 &nbsp;&nbsp;&nbsp;&nbsp;✔️ 使点云检测器能够将对象与相应的文本描述联系起来 // **`point-cloud detector`** is able to relate the objects with corresponding text descriptions. 
 &nbsp;&nbsp;&nbsp;&nbsp;✔️ 在推理过程中，只使用点云检测器和文本提示 // During inference, only **`point-cloud detector`** and  **`text prompts`** are used.
 
@@ -339,13 +425,23 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h3>1. Pick up</h3>
+<div class="markdown-body" id="postBody"><h3>0. To Do</h3>
 <ol>
-<li><strong><code class="notranslate">open-vocabulary detection</code></strong> ➡️ The goal of <strong><code class="notranslate">open-vocabulary detection</code></strong> is to identify novel objects based on arbitrary textual descriptions.</li>
+<li>数学公式的输入和理解  ➡️  论文数学表达式的基本理解</li>
+<li>代码没有跑过  ➡️  Pytorch的入门</li>
+<li>在网页上编辑还是太难了 转到本地VScode会不会快捷键缩进之类好一些？  ➡️  及时渲染的插件</li>
+</ol>
+<h3>1. Pick up</h3>
+<ol>
+<li><strong><code class="notranslate">open-vocabulary detection</code></strong> ➡️ The goal of <strong><code class="notranslate">open-vocabulary detection</code></strong> is to identify novel objects based on arbitrary textual descriptions.<br>
+      ➡️ <strong><code class="notranslate">open-vocabulary detection</code></strong> (or known as zero-shot ) targets to detect the novel classes that are not provided labels during training which usually accompanied by arbitrary text description // 开放词汇表目标检测 目标为检测出在训练中没有提供标签的新类 通常伴随着任意的文本描述</li>
 <li><strong><code class="notranslate">unseen objects</code></strong> ➡️ novel objects <strong><code class="notranslate">unseen objects</code></strong> , namely, not ever defined and trained by the already deployed 3D systems.</li>
 <li><strong><code class="notranslate">vision-language pre-trained models/detector</code></strong> ➡️e.g. <a href="https://openai.com/index/clip/" rel="nofollow">CLIP</a></li>
-<li><strong><code class="notranslate">2D image pre-trained models</code></strong>  ➡️e.g. <a href="https://arxiv.org/pdf/2201.02605" rel="nofollow">Detic</a></li>
+<li><strong><code class="notranslate">2D image pre-trained models</code></strong>  ➡️e.g. <a href="https://arxiv.org/pdf/2201.02605" rel="nofollow">Detic</a>   <a href="https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf" rel="nofollow">Mask R-CNN</a>   <a href="https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Girshick_Fast_R-CNN_ICCV_2015_paper.pdf" rel="nofollow">Fast R-CNN</a> etc.</li>
 <li><strong><code class="notranslate">point-cloud detector</code></strong> ➡️</li>
+<li><strong><code class="notranslate">image-text pairs</code></strong> ➡️</li>
+<li><strong><code class="notranslate">semantics</code></strong> ➡️</li>
+<li><strong><code class="notranslate">embedding layer</code></strong> ➡️</li>
 <li><strong><code class="notranslate">point-cloud embeddings</code></strong> ➡️</li>
 <li><strong><code class="notranslate"> </code></strong> ➡️</li>
 <li><strong><code class="notranslate"> </code></strong> ➡️</li>
@@ -371,6 +467,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </p>
             <b>Participants:</b>
             <p>Yuheng Lu 1∗, Chenfeng Xu 2∗</p>
+<p></p>
+            <b>Dataset:</b>
+            <p>
+<a href="https://paperswithcode.com/dataset/sun-rgb-d" rel="nofollow">
+<b>[SUN RGB]</b></a>     <a href="https://paperswithcode.com/dataset/scannet" rel="nofollow">
+<b>[ScanNet]</b></a>
+</p>
         </td>
     </tr>
     <tr>
@@ -378,7 +481,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             <p><b>Introduction:</b></p>
             <p>
 </p><ol>
-<li>点云检测器在有限数量对象上训练 ≠ 解释现实的对象 // Current SOTA point-cloud detectors are trained on a limited classes ≠ classes in the real world.<br>
+<li>点云检测器在有限数量对象上训练 无法扩展到 现实丰富的对象 // Current SOTA point-cloud detectors are trained on a limited classes ≠ classes in the real world.<br>
     ↪️检测器不能推广看不见对象 // detectors fail to generalize to   <strong><code class="notranslate">unseen object</code></strong>   classes</li>
 <li>开放词汇表检测需要模型学习一般的表示并将其与文本联系 // open-vocabulary detection requires the model to learn general representations and relate those representations to text cues.<br>
     ↪️点云领域数据收集和注释的困难 //  the difficulty of both data collection and annotation.<br>
@@ -417,17 +520,36 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </td>
     </tr>
     <tr>
+        <td valign="top" width="1000" colspan="5">
+            <p><b>Related Work:</b></p>
+<p>
+</p><p><strong>1. Open-Vocabulary 2D and 3D Detection</strong><br>
+【待总结】</p>
+<p><strong>2. Weakly-Supervised Detection</strong><br>
+【待总结】</p>
+<p></p>
+        </td>
+    </tr>
+    <tr>
         <td colspan="6" valign="top" width="1000">
             <p>
-</p><p><del>#### Framework<br>
+</p><p><del>#### Framework Overview:<br>
 <strong><code class="notranslate">OV-3DET</code></strong> is a divide-and conquer method ➡️ two stages<br>
 ① <strong><code class="notranslate">point-cloud detector</code></strong> learns to localize the unknown objects<br>
 ② <strong><code class="notranslate">point-cloud detector</code></strong> learns to name them according to the text prompts.</del></p>
-<h4>Method</h4>
-<p>💡① 直接使用二维预训练的检测器在相应的图像中生成一系列二维边界框或二维实例掩码 // directly take <strong><code class="notranslate">2D image pre-trained detector</code></strong> to generate a series of 2D bounding boxes or 2D instance masks in the corresponding images.<br>
-        ✔️ 没有使用 class labels predicted by <strong><code class="notranslate">2D image pre-trained detector</code></strong><br>
+<h4>Method:（和·framework的序号顺序是一致的）</h4>
+<p>💡<strong>① 【Localization 从二维预训练的检测器中获得定位能力】</strong><br>
+        ✔️ 直接使用二维预训练的检测器在相应的图像中生成一系列二维边界框或二维实例掩码 // directly take <strong><code class="notranslate">2D image pre-trained detector</code></strong> to generate a series of 2D bounding boxes or 2D instance masks in the corresponding images.<br>
+        ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the <strong><code class="notranslate">predicted 2D bounding boxes</code></strong> as the <strong><code class="notranslate">pseudo bounding box</code></strong> of the point-cloud detector after transforming the <strong><code class="notranslate">frustum</code></strong> into relatively tight bounding box according to the <strong>point-cloud geometry</strong>, as shown in Fig. 2.</p>
+<div align="center">
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/14935857-38d9-4714-962c-9104438bb1e9"><img src="https://github.com/user-attachments/assets/14935857-38d9-4714-962c-9104438bb1e9" width="500" style="max-width: 100%;"></a>
+ <em>Fig 2</em>
+</div>
+ 
+<p>        ✔️ 没有使用 class labels predicted by <strong><code class="notranslate">2D image pre-trained detector</code></strong><br>
         ✔️ 使用粗糙的二维边界框或二维实例掩码来监督3D点云检测器来学习定位3D对象 // use the coarse 2D bounding boxes or 2D instance masks to supervise <strong><code class="notranslate">3D point-cloud detectors</code></strong> to learn localizing 3D objects.</p>
-<p>💡②  提出一种去偏三重态跨模态对比学习方法来将点云、图像和文本联系起来 // propose a <strong><code class="notranslate">de-biased triplet cross-modal contrastive learning method</code></strong> to connect the modalities among point-cloud, image, and text<br>
+<p>💡<strong>② 【Classification 跨模态将点云对象进行分类】</strong><br>
+        ✔️ 提出一种 <strong>去偏三重态跨模态对比学习方法</strong> 来将点云、图像和文本联系起来 // propose a <strong><code class="notranslate">de-biased triplet cross-modal contrastive learning method</code></strong> to connect the modalities among point-cloud, image, and text<br>
     ✔️ 使点云检测器能够将对象与相应的文本描述联系起来 // <strong><code class="notranslate">point-cloud detector</code></strong> is able to relate the objects with corresponding text descriptions.<br>
     ✔️ 在推理过程中，只使用点云检测器和文本提示 // During inference, only <strong><code class="notranslate">point-cloud detector</code></strong> and  <strong><code class="notranslate">text prompts</code></strong> are used.</p>
 <p> </p>
