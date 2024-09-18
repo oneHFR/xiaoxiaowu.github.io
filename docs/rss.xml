@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小小吴 提桶跑路 Blog</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link><description>check the first blog👌: [Original purpose for this blog web]</description><copyright>小小吴 提桶跑路 Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pbs.twimg.com/profile_images/1831494246718959622/uKZLFSPM_400x400.jpg</url><title>avatar</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link></image><lastBuildDate>Wed, 18 Sep 2024 12:24:21 +0000</lastBuildDate><managingEditor>小小吴 提桶跑路 Blog</managingEditor><ttl>60</ttl><webMaster>小小吴 提桶跑路 Blog</webMaster><item><title>0917 Reading</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io/post/0917%20Reading.html</link><description>### 0. To Do&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小小吴 提桶跑路 Blog</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link><description>check the first blog👌: [Original purpose for this blog web]</description><copyright>小小吴 提桶跑路 Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pbs.twimg.com/profile_images/1831494246718959622/uKZLFSPM_400x400.jpg</url><title>avatar</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link></image><lastBuildDate>Wed, 18 Sep 2024 12:47:35 +0000</lastBuildDate><managingEditor>小小吴 提桶跑路 Blog</managingEditor><ttl>60</ttl><webMaster>小小吴 提桶跑路 Blog</webMaster><item><title>0917 Reading</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io/post/0917%20Reading.html</link><description>### 0. To Do&#13;
 &#13;
 1. 数学公式的输入和理解  ➡️  论文数学表达式的基本理解&#13;
 2. 代码没有跑过  ➡️  Pytorch的入门&#13;
@@ -68,7 +68,7 @@
 1. 提出 **`OV-3DET`** 利用**图像/视觉语言预训练模型**实现开放词汇表3D点云检测 // propose **`OV-3DET`**, which leverages advanced **`image pre-trained models`**  and **`vision-language pre-trained models`** to achieve **O**pen-**V**ocabulary **3**D point-cloud **DET**ection &#13;
 2. **`OV-3DET`** 以点云和文本作为输入，并根据文本描述检测对象 不依赖于大量类标签和文本对的大规模点云数据）&#13;
 &lt;div align='center'&gt;&#13;
-    &lt;img src='https://github.com/user-attachments/assets/8e23da74-e5a1-4510-b3f8-3a199a850c4a' width='600'&gt;&#13;
+    &lt;img src='https://github.com/oneHFR/xiaoxiaowu.github.io/blob/main/OVD_files/img/1-fig1.png' width='600'&gt;&#13;
  &lt;em&gt;Fig 1&lt;/em&gt;&#13;
 &lt;/div&gt;&#13;
 &amp;nbsp;&#13;
@@ -116,7 +116,7 @@
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the **`predicted 2D bounding boxes`** as the **`pseudo bounding box`** of the point-cloud detector after transforming the **`frustum`** into relatively tight bounding box according to the **point-cloud geometry**, as shown in Fig. 2.&#13;
 &#13;
 &lt;div align='center'&gt;&#13;
-    &lt;img src='https://github.com/user-attachments/assets/14935857-38d9-4714-962c-9104438bb1e9' width='500'&gt;&#13;
+    &lt;img src='https://github.com/oneHFR/xiaoxiaowu.github.io/blob/main/OVD_files/img/1-fig2.png' width='500'&gt;&#13;
  &lt;em&gt;Fig 2&lt;/em&gt;&#13;
 &lt;/div&gt;&#13;
 &amp;nbsp;&#13;

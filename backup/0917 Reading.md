@@ -67,7 +67,7 @@
 1. 提出 **`OV-3DET`** 利用**图像/视觉语言预训练模型**实现开放词汇表3D点云检测 // propose **`OV-3DET`**, which leverages advanced **`image pre-trained models`**  and **`vision-language pre-trained models`** to achieve **O**pen-**V**ocabulary **3**D point-cloud **DET**ection 
 2. **`OV-3DET`** 以点云和文本作为输入，并根据文本描述检测对象 不依赖于大量类标签和文本对的大规模点云数据）
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/8e23da74-e5a1-4510-b3f8-3a199a850c4a" width="600">
+    <img src="https://github.com/oneHFR/xiaoxiaowu.github.io/blob/main/OVD_files/img/1-fig1.png" width="600">
  <em>Fig 1</em>
 </div>
 &nbsp;
@@ -115,7 +115,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the **`predicted 2D bounding boxes`** as the **`pseudo bounding box`** of the point-cloud detector after transforming the **`frustum`** into relatively tight bounding box according to the **point-cloud geometry**, as shown in Fig. 2.
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/14935857-38d9-4714-962c-9104438bb1e9" width="500">
+    <img src="https://github.com/oneHFR/xiaoxiaowu.github.io/blob/main/OVD_files/img/1-fig2.png" width="500">
  <em>Fig 2</em>
 </div>
 &nbsp;
