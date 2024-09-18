@@ -1,7 +1,8 @@
 ### 1. Pick up
 
-1. The goal of **`open-vocabulary detection`** is to identify novel objects based on arbitrary textual descriptions.
-2. 
+1. **`open-vocabulary detection`** ▶️ The goal of **`open-vocabulary detection`** is to identify novel objects based on arbitrary textual descriptions.
+2. **` `** ▶️
+3. **` `** ▶️
 
 &nbsp;
 
@@ -19,7 +20,8 @@
         <td colspan="6" valign="top" width="1000">
             <b>Title:</b>
             <p>Open-Vocabulary Point-Cloud Object Detection without 3D Annotation
-  <a href="https://github.com/oneHFR/xiaoxiaowu.github.io/blob/main/OVD_files/paper/Lu_Open-Vocabulary_Point-Cloud_Object_Detection_Without_3D_Annotation_CVPR_2023_paper.pdf">[here]</a>
+  <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Lu_Open-Vocabulary_Point-Cloud_Object_Detection_Without_3D_Annotation_CVPR_2023_paper.pdf">[paper]</a>
+  <a href="https://github.com/oneHFR/xiaoxiaowu.github.io/blob/main/OVD_files/paper/Lu_Open-Vocabulary_Point-Cloud_Object_Detection_Without_3D_Annotation_CVPR_2023_paper.pdf"> [annotation]</a>
 </p>
             <b>Participants:</b>
             <p>Yuheng Lu 1∗, Chenfeng Xu 2∗</p>

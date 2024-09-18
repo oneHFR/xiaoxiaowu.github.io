@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小小吴 提桶跑路 Blog</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link><description>check the first blog👌: [Original purpose for this blog web]</description><copyright>小小吴 提桶跑路 Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pbs.twimg.com/profile_images/1831494246718959622/uKZLFSPM_400x400.jpg</url><title>avatar</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link></image><lastBuildDate>Wed, 18 Sep 2024 05:59:51 +0000</lastBuildDate><managingEditor>小小吴 提桶跑路 Blog</managingEditor><ttl>60</ttl><webMaster>小小吴 提桶跑路 Blog</webMaster><item><title>0917 Reading</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io/post/0917%20Reading.html</link><description>### 1. Pick up&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>小小吴 提桶跑路 Blog</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link><description>check the first blog👌: [Original purpose for this blog web]</description><copyright>小小吴 提桶跑路 Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pbs.twimg.com/profile_images/1831494246718959622/uKZLFSPM_400x400.jpg</url><title>avatar</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io</link></image><lastBuildDate>Wed, 18 Sep 2024 06:05:16 +0000</lastBuildDate><managingEditor>小小吴 提桶跑路 Blog</managingEditor><ttl>60</ttl><webMaster>小小吴 提桶跑路 Blog</webMaster><item><title>0917 Reading</title><link>https://oneHFR.github.io/xiaoxiaowu.github.io/post/0917%20Reading.html</link><description>### 1. Pick up&#13;
 &#13;
-1. The goal of **`open-vocabulary detection`** is to identify novel objects based on arbitrary textual descriptions.&#13;
-2. &#13;
+1. **`open-vocabulary detection`** ▶️ The goal of **`open-vocabulary detection`** is to identify novel objects based on arbitrary textual descriptions.&#13;
+2. **` `** ▶️&#13;
+3. **` `** ▶️&#13;
 &#13;
 &amp;nbsp;&#13;
 &#13;
@@ -20,7 +21,8 @@
         &lt;td colspan='6' valign='top' width='1000'&gt;&#13;
             &lt;b&gt;Title:&lt;/b&gt;&#13;
             &lt;p&gt;Open-Vocabulary Point-Cloud Object Detection without 3D Annotation&#13;
-  &lt;a href='https://github.com/oneHFR/xiaoxiaowu.github.io/blob/main/OVD_files/paper/Lu_Open-Vocabulary_Point-Cloud_Object_Detection_Without_3D_Annotation_CVPR_2023_paper.pdf'&gt;[here]&lt;/a&gt;&#13;
+  &lt;a href='https://openaccess.thecvf.com/content/CVPR2023/papers/Lu_Open-Vocabulary_Point-Cloud_Object_Detection_Without_3D_Annotation_CVPR_2023_paper.pdf'&gt;[paper]&lt;/a&gt;&#13;
+  &lt;a href='https://github.com/oneHFR/xiaoxiaowu.github.io/blob/main/OVD_files/paper/Lu_Open-Vocabulary_Point-Cloud_Object_Detection_Without_3D_Annotation_CVPR_2023_paper.pdf'&gt; [annotation]&lt;/a&gt;&#13;
 &lt;/p&gt;&#13;
             &lt;b&gt;Participants:&lt;/b&gt;&#13;
             &lt;p&gt;Yuheng Lu 1∗, Chenfeng Xu 2∗&lt;/p&gt;&#13;
