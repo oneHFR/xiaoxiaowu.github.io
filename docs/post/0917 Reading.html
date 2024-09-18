@@ -79,7 +79,7 @@
 1. 提出 **`OV-3DET`** 利用**图像/视觉语言预训练模型**实现开放词汇表3D点云检测 // propose **`OV-3DET`**, which leverages advanced **`image pre-trained models`**  and **`vision-language pre-trained models`** to achieve **O**pen-**V**ocabulary **3**D point-cloud **DET**ection 
 2. **`OV-3DET`** 以点云和文本作为输入，并根据文本描述检测对象 不依赖于大量类标签和文本对的大规模点云数据）
 <div align='center'>
-    <img src='../OVD_files/img/1-fig1.png' width='600'>
+    <img src='https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig1.png' width='600'>
  <em>Fig 1</em>
 </div>
 &nbsp;
@@ -127,7 +127,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the **`predicted 2D bounding boxes`** as the **`pseudo bounding box`** of the point-cloud detector after transforming the **`frustum`** into relatively tight bounding box according to the **point-cloud geometry**, as shown in Fig. 2.
 
 <div align='center' id='fig8'>
-    <img src='../OVD_files/img/1-fig2.png' width='500'>
+    <img src='https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig2.png' width='500'>
  <em>Fig 2</em>
 </div>
 &nbsp;
@@ -191,15 +191,15 @@ $I \in \mathbb{R}^{3 \times H \times W}$, $P = \{p_i \in \mathbb{R}^3, i = 1, 2,
 
 During training, the unlabeled point-clouds dataset with its paired image is used, denotes as <br>
 
-$D_{\text{pc}} = \{P_j\}^{|D_{\text{pc}}|}_{j=1}$ 
-&nbsp;&nbsp;&nbsp;&nbsp; 
-$D_{\text{img}} = \{I_j\}^{|D_{\text{img}}|}_{j=1}$
+$D^{pc}$ = ${{P_j}}^{|D_{pc}|}_{j=1}$ 
+
+$D^{img}$  = ${I_j}^{|D_{img}|}_{j=1}$
 
 【还有一些没写】<br>
 
 Perform
 open-vocabulary classification by comparing between $f_{1D}$ (text feature)
-and $f_{3D}$, where f1D represents 
+and $f_{3D}$, where $f_{3D}$ represents 
 
 
 #### 3.3 Learn to Localize 3D Objects from 2D Pre-trained Detector
@@ -289,7 +289,7 @@ loss used in [3DETR](https://openaccess.thecvf.com/content/ICCV2021/papers/Misra
 1. 提出 **`OV-3DET`** 利用**图像/视觉语言预训练模型**实现开放词汇表3D点云检测 // propose **`OV-3DET`**, which leverages advanced **`image pre-trained models`**  and **`vision-language pre-trained models`** to achieve **O**pen-**V**ocabulary **3**D point-cloud **DET**ection 
 2. **`OV-3DET`** 以点云和文本作为输入，并根据文本描述检测对象 不依赖于大量类标签和文本对的大规模点云数据）
 <div align='center'>
-    <img src='../OVD_files/img/1-fig1.png' width='600'>
+    <img src='https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig1.png' width='600'>
  <em>Fig 1</em>
 </div>
 &nbsp;
@@ -337,7 +337,7 @@ loss used in [3DETR](https://openaccess.thecvf.com/content/ICCV2021/papers/Misra
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the **`predicted 2D bounding boxes`** as the **`pseudo bounding box`** of the point-cloud detector after transforming the **`frustum`** into relatively tight bounding box according to the **point-cloud geometry**, as shown in Fig. 2.
 
 <div align='center' id='fig8'>
-    <img src='../OVD_files/img/1-fig2.png' width='500'>
+    <img src='https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig2.png' width='500'>
  <em>Fig 2</em>
 </div>
 &nbsp;
@@ -401,15 +401,15 @@ $I \in \mathbb{R}^{3 \times H \times W}$, $P = \{p_i \in \mathbb{R}^3, i = 1, 2,
 
 During training, the unlabeled point-clouds dataset with its paired image is used, denotes as <br>
 
-$D_{\text{pc}} = \{P_j\}^{|D_{\text{pc}}|}_{j=1}$ 
-&nbsp;&nbsp;&nbsp;&nbsp; 
-$D_{\text{img}} = \{I_j\}^{|D_{\text{img}}|}_{j=1}$
+$D^{pc}$ = ${{P_j}}^{|D_{pc}|}_{j=1}$ 
+
+$D^{img}$  = ${I_j}^{|D_{img}|}_{j=1}$
 
 【还有一些没写】<br>
 
 Perform
 open-vocabulary classification by comparing between $f_{1D}$ (text feature)
-and $f_{3D}$, where f1D represents 
+and $f_{3D}$, where $f_{3D}$ represents 
 
 
 #### 3.3 Learn to Localize 3D Objects from 2D Pre-trained Detector
@@ -570,7 +570,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li><strong><code class="notranslate">OV-3DET</code></strong> 以点云和文本作为输入，并根据文本描述检测对象 不依赖于大量类标签和文本对的大规模点云数据）</li>
 </ol>
 <div align="center">
-    <a target="_blank" rel="noopener noreferrer" href="../OVD_files/img/1-fig1.png"><img src="../OVD_files/img/1-fig1.png" width="600" style="max-width: 100%;"></a>
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig1.png"><img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig1.png" width="600" style="max-width: 100%;"></a>
  <em>Fig 1</em>
 </div>
  
@@ -616,7 +616,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         ✔️ 直接使用二维预训练的检测器在相应的图像中生成一系列二维边界框或二维实例掩码 // directly take <strong><code class="notranslate">2D image pre-trained detector</code></strong> to generate a series of 2D bounding boxes or 2D instance masks in the corresponding images.  <br><br>
         ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the <strong><code class="notranslate">predicted 2D bounding boxes</code></strong> as the <strong><code class="notranslate">pseudo bounding box</code></strong> of the point-cloud detector after transforming the <strong><code class="notranslate">frustum</code></strong> into relatively tight bounding box according to the <strong>point-cloud geometry</strong>, as shown in Fig. 2.</p>
 <div align="center" id="user-content-fig8">
-    <a target="_blank" rel="noopener noreferrer" href="../OVD_files/img/1-fig2.png"><img src="../OVD_files/img/1-fig2.png" width="500" style="max-width: 100%;"></a>
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig2.png"><img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig2.png" width="500" style="max-width: 100%;"></a>
  <em>Fig 2</em>
 </div>
  
@@ -670,13 +670,12 @@ $I$ ➡️ image <br><br>
 $P$ ➡️ point-cloud <br><br>
 $I \in \mathbb{R}^{3 \times H \times W}$, $P = {p_i \in \mathbb{R}^3, i = 1, 2, 3, \dots, N}$, where $N$ is the point number in the point-cloud. <br></p>
 <p>During training, the unlabeled point-clouds dataset with its paired image is used, denotes as <br></p>
-<p>$D_{\text{pc}} = {P_j}^{|D_{\text{pc}}|}<em>{j=1}$<br>
-    <br>
-$D</em>{\text{img}} = {I_j}^{|D_{\text{img}}|}_{j=1}$</p>
+<p>$D^{pc}$ = ${{P_j}}^{|D_{pc}|}_{j=1}$</p>
+<p>$D^{img}$  = ${I_j}^{|D_{img}|}_{j=1}$</p>
 <p>【还有一些没写】<br></p>
 <p>Perform<br>
 open-vocabulary classification by comparing between $f_{1D}$ (text feature)<br>
-and $f_{3D}$, where f1D represents</p>
+and $f_{3D}$, where $f_{3D}$ represents</p>
 <h4>3.3 Learn to Localize 3D Objects from 2D Pre-trained Detector</h4>
 <ol>
 <li>
@@ -748,17 +747,17 @@ the intermediary ➡️ a De-biased Triplet Cross Modal Contrastive Learning (DT
 </li>
 </ol>
 <div align="center">
-    <a target="_blank" rel="noopener noreferrer" href="../OVD_files/img/1-fig3.png"><img src="../OVD_files/img/1-fig3.png" width="700" style="max-width: 100%;"></a>
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig3.png"><img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig3.png" width="700" style="max-width: 100%;"></a>
  <em>Fig 3</em>
 </div>
  
 <div align="center">
-    <a target="_blank" rel="noopener noreferrer" href="../OVD_files/img/1-fig4.png"><img src="../OVD_files/img/1-fig4.png" width="400" style="max-width: 100%;"></a>
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig4.png"><img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig4.png" width="400" style="max-width: 100%;"></a>
  <em>Fig 4</em>
 </div>
  
 <div align="center">
-    <a target="_blank" rel="noopener noreferrer" href="../OVD_files/img/1-fig8.png"><img src="../OVD_files/img/1-fig8.png" width="400" style="max-width: 100%;"></a>
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig8.png"><img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig8.png" width="400" style="max-width: 100%;"></a>
  <em>Fig 8</em>
 </div>
  

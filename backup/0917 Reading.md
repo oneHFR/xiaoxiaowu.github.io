@@ -67,7 +67,7 @@
 1. 提出 **`OV-3DET`** 利用**图像/视觉语言预训练模型**实现开放词汇表3D点云检测 // propose **`OV-3DET`**, which leverages advanced **`image pre-trained models`**  and **`vision-language pre-trained models`** to achieve **O**pen-**V**ocabulary **3**D point-cloud **DET**ection 
 2. **`OV-3DET`** 以点云和文本作为输入，并根据文本描述检测对象 不依赖于大量类标签和文本对的大规模点云数据）
 <div align="center">
-    <img src="../OVD_files/img/1-fig1.png" width="600">
+    <img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig1.png" width="600">
  <em>Fig 1</em>
 </div>
 &nbsp;
@@ -115,7 +115,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the **`predicted 2D bounding boxes`** as the **`pseudo bounding box`** of the point-cloud detector after transforming the **`frustum`** into relatively tight bounding box according to the **point-cloud geometry**, as shown in Fig. 2.
 
 <div align="center" id="fig8">
-    <img src="../OVD_files/img/1-fig2.png" width="500">
+    <img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig2.png" width="500">
  <em>Fig 2</em>
 </div>
 &nbsp;
@@ -179,15 +179,15 @@ $I \in \mathbb{R}^{3 \times H \times W}$, $P = \{p_i \in \mathbb{R}^3, i = 1, 2,
 
 During training, the unlabeled point-clouds dataset with its paired image is used, denotes as <br>
 
-$D_{\text{pc}} = \{P_j\}^{|D_{\text{pc}}|}_{j=1}$ 
-&nbsp;&nbsp;&nbsp;&nbsp; 
-$D_{\text{img}} = \{I_j\}^{|D_{\text{img}}|}_{j=1}$
+$D^{pc}$ = ${{P_j}}^{|D_{pc}|}_{j=1}$ 
+
+$D^{img}$  = ${I_j}^{|D_{img}|}_{j=1}$
 
 【还有一些没写】<br>
 
 Perform
 open-vocabulary classification by comparing between $f_{1D}$ (text feature)
-and $f_{3D}$, where f1D represents 
+and $f_{3D}$, where $f_{3D}$ represents 
 
 
 #### 3.3 Learn to Localize 3D Objects from 2D Pre-trained Detector
@@ -234,19 +234,19 @@ the intermediary ➡️ a De-biased Triplet Cross Modal Contrastive Learning (DT
 
 
 <div align="center">
-    <img src="../OVD_files/img/1-fig3.png" width="700">
+    <img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig3.png" width="700">
  <em>Fig 3</em>
 </div>
 &nbsp;
 
 <div align="center">
-    <img src="../OVD_files/img/1-fig4.png" width="400">
+    <img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig4.png" width="400">
  <em>Fig 4</em>
 </div>
 &nbsp;
 
 <div align="center">
-    <img src="../OVD_files/img/1-fig8.png" width="400">
+    <img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig8.png" width="400">
  <em>Fig 8</em>
 </div>
 &nbsp;
