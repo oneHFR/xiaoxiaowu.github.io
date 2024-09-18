@@ -1,6 +1,6 @@
 > **PICK UP**
 
-1. The **`goal of open-vocabulary detection`** is to identify novel objects based on arbitrary textual descriptions.
+1. The goal of **`open-vocabulary detection`** is to identify novel objects based on arbitrary textual descriptions.
 2. 
 
 
@@ -30,12 +30,15 @@
             <p><b>Research Conclusion:</b></p>
             <p>
 
-1. propose an open-vocabulary point-cloud detector, dubbed OV-3DET,
+1. 开放词汇表的点云检测器 OV-3DET // propose an open-vocabulary point-cloud detector, dubbed OV-3DET, 
 
 > which is capable of localizing and naming 3D objects based on arbitrary text descriptions.
-> notrequire any 3D human annotations
+> not require any 3D human **`annotations`**
 
-2. achieve this by resorting to well-established 2D pre-trained detectors and vision-language models.
+2. 通过二维预先训练的检测器和视觉语言模型实现 // achieve this by resorting to **`2D pre-trained detectors`** and **`vision-language models`**.
+
+> localize 3D objects from **`2D pre-trained detectors`**,
+> and then classify the detected objects by connecting text and point-cloud **`embeddings`**.
 
 </p>
         </td>
@@ -84,7 +87,7 @@
 def hello_world():
     print("Hello, world!")
 ```
-
+**`open-vocabulary detection`**
 
 
 
