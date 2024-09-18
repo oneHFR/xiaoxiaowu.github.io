@@ -38,10 +38,10 @@
             <p>
 
 1. 点云检测器在有限数量对象上训练 ≠ 解释现实的对象 // Current SOTA point-cloud detectors are trained on a limited classes ≠ classes in the real world.
-↪️检测器不能推广看不见对象 // detectors fail to generalize to   **`unseen object`**   classes
+&nbsp;&nbsp;&nbsp;&nbsp;↪️检测器不能推广看不见对象 // detectors fail to generalize to   **`unseen object`**   classes
 2. 开放词汇表检测需要模型学习一般的表示并将其与文本联系 // open-vocabulary detection requires the model to learn general representations and relate those representations to text cues.
-↪️点云领域数据收集和注释的困难 //  the difficulty of both data collection and annotation.
-↪️阻碍点云检测器学会如何将表示与文本提示连接起来 // hinders point-cloud detectors from learning to connect the representation with text prompts.
+&nbsp;&nbsp;&nbsp;&nbsp;↪️点云领域数据收集和注释的困难 //  the difficulty of both data collection and annotation.
+&nbsp;&nbsp;&nbsp;&nbsp;↪️阻碍点云检测器学会如何将表示与文本提示连接起来 // hinders point-cloud detectors from learning to connect the representation with text prompts.
 &nbsp;
 </p>
             <p><b>💡Aim:</b></p>
@@ -59,12 +59,12 @@
             <p>
 
 1. 提出开放词汇表的点云检测器 **`OV-3DET`** 
-  ✔️ 基于任意的文本描述来本地化和命名3D对象 // localize and name 3D objects based on arbitrary text descriptions.
-  ✔️ **`OV-3DET`** 的训练不需要任何3D人工注释 // not require any 3D human annotations
+&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ 基于任意的文本描述来本地化和命名3D对象 // localize and name 3D objects based on arbitrary text descriptions.
+&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ **`OV-3DET`** 的训练不需要任何3D人工注释 // not require any 3D human annotations
 
 2. 通过**二维预先训练的检测器**和**视觉语言模型实现** // **`2D image pre-trained detectors`** and **`vision-language models`**.
-  ✔️ 从二维预训练的检测器中定位三维对象 // localize 3D objects from **`2D pre-trained detectors`**,
-  ✔️ 通过连接文本和点云嵌入来对检测到的对象进行分类 // classify the detected objects by connecting text and **`point-cloud embeddings`**.
+&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ 从二维预训练的检测器中定位三维对象 // localize 3D objects from **`2D pre-trained detectors`**,
+&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ 通过连接文本和点云嵌入来对检测到的对象进行分类 // classify the detected objects by connecting text and **`point-cloud embeddings`**.
 &nbsp;
 </p>
         </td>
@@ -79,12 +79,12 @@
 ② **`point-cloud detector`** learns to name them according to the text prompts.~~
 #### Method
 💡① 直接使用二维预训练的检测器在相应的图像中生成一系列二维边界框或二维实例掩码 // directly take **`2D image pre-trained detector`** to generate a series of 2D bounding boxes or 2D instance masks in the corresponding images. 
-    ✔️ 没有使用 class labels predicted by **`2D image pre-trained detector`**
-    ✔️ 使用粗糙的二维边界框或二维实例掩码来监督3D点云检测器来学习定位3D对象 // use the coarse 2D bounding boxes or 2D instance masks to supervise **`3D point-cloud detectors`** to learn localizing 3D objects.
+&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 没有使用 class labels predicted by **`2D image pre-trained detector`**
+&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 使用粗糙的二维边界框或二维实例掩码来监督3D点云检测器来学习定位3D对象 // use the coarse 2D bounding boxes or 2D instance masks to supervise **`3D point-cloud detectors`** to learn localizing 3D objects.
 
 💡②  提出一种去偏三重态跨模态对比学习方法来将点云、图像和文本联系起来 // propose a **`de-biased triplet cross-modal contrastive learning method`** to connect the modalities among point-cloud, image, and text
-✔️ 使点云检测器能够将对象与相应的文本描述联系起来 // **`point-cloud detector`** is able to relate the objects with corresponding text descriptions. 
-✔️ 在推理过程中，只使用点云检测器和文本提示 // During inference, only **`point-cloud detector`** and  **`text prompts`** are used.
+&nbsp;&nbsp;&nbsp;&nbsp;✔️ 使点云检测器能够将对象与相应的文本描述联系起来 // **`point-cloud detector`** is able to relate the objects with corresponding text descriptions. 
+&nbsp;&nbsp;&nbsp;&nbsp;✔️ 在推理过程中，只使用点云检测器和文本提示 // During inference, only **`point-cloud detector`** and  **`text prompts`** are used.
 
 &nbsp;
 </p>
@@ -94,7 +94,7 @@
         </td>
     </tr>
     <tr>
-        <td valign="top" width="800" colspan="4">
+        <td valign="top" width="1000" colspan="5">
             <p><b>Results:</b></p>
             <p>&nbsp;
 
@@ -103,21 +103,15 @@
 
 </p>
         </td>
-        <td valign="top" width="200" colspan="2">
-            <p><b>Discussion:</b></p>
-        </td>
     </tr>
     <tr>
-        <td valign="top" width="800" colspan="4">
-            <p><b>Conclusion:</b></p>
-            <p>
+        <td valign="top" width="1000" colspan="5">
+            <p><b>Further: (ablation study 只简介设计与操作和所得结果)</b></p>
+<p>
 
-&nbsp;
+ #### ablation
 
 </p>
-        </td>
-        <td valign="top" width="200">
-            <p><b>Further:</b></p>
         </td>
     </tr>
 </table>
