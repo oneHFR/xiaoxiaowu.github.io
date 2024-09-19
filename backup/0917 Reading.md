@@ -43,9 +43,7 @@
 </p>
             <b>Dataset:</b>
             <p>
-<a href = "https://paperswithcode.com/dataset/sun-rgb-d">
-<b>[SUN RGB]</b></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href = "https://paperswithcode.com/dataset/scannet">
-<b>[ScanNet]</b></a>
+<a href = "https://paperswithcode.com/dataset/sun-rgb-d">[SUN RGB]</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href = "https://paperswithcode.com/dataset/scannet">[ScanNet</a>
 </p>
         </td>
     </tr>
@@ -54,11 +52,12 @@
             <p><b>Introduction:</b></p>
             <p>
 
-1. 点云检测器在有限数量对象上训练 无法扩展到 现实丰富的对象 // Current SOTA point-cloud detectors are trained on a limited classes ≠ classes in the real world.
-&nbsp;&nbsp;&nbsp;&nbsp;↪️检测器不能推广看不见对象 // detectors fail to generalize to   **`unseen object`**   classes
-2. 开放词汇表检测需要模型学习一般的表示并将其与文本联系 // open-vocabulary detection requires the model to learn general representations and relate those representations to text cues.
-&nbsp;&nbsp;&nbsp;&nbsp;↪️点云领域数据收集和注释的困难 //  the difficulty of both data collection and annotation.
-&nbsp;&nbsp;&nbsp;&nbsp;↪️阻碍点云检测器学会如何将表示与文本提示连接起来 // hinders point-cloud detectors from learning to connect the representation with text prompts.
+1. 点云检测器在有限数量对象上训练 无法扩展到 现实丰富的对象 // Current SOTA point-cloud detectors are trained on a limited classes ≠ classes in the real world. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;↪️检测器不能推广看不见对象 // detectors fail to generalize to   **`unseen object`**   classes <br>
+
+2. 开放词汇表检测需要模型学习一般的表示并将其与文本联系 // open-vocabulary detection requires the model to learn general representations and relate those representations to text cues. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;↪️点云领域数据收集和注释的困难 //  the difficulty of both data collection and annotation. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;↪️阻碍点云检测器学会如何将表示与文本提示连接起来 // hinders point-cloud detectors from learning to connect the representation with text prompts. <br>
 &nbsp;
 </p>
             <p><b>💡Aim:</b></p>
@@ -76,12 +75,12 @@
             <p>
 
 1. 提出开放词汇表的点云检测器 **`OV-3DET`**  <br>
-&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ 基于任意的文本描述来本地化和命名3D对象 // localize and name 3D objects based on arbitrary text descriptions.
-&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ **`OV-3DET`** 的训练不需要任何3D人工注释 // not require any 3D human annotations
+&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ 基于任意的文本描述来本地化和命名3D对象 // localize and name 3D objects based on arbitrary text descriptions. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ **`OV-3DET`** 的训练不需要任何3D人工注释 // not require any 3D human annotations <br>
 
-2. 通过**二维预先训练的检测器**和**视觉语言模型实现** // **`2D image pre-trained detectors`** and **`vision-language models`**.
-&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ 从二维预训练的检测器中定位三维对象 // localize 3D objects from **`2D pre-trained detectors`**,
-&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ 通过连接文本和点云嵌入来对检测到的对象进行分类 // classify the detected objects by connecting text and **`point-cloud embeddings`**.
+2. 通过**二维预先训练的检测器**和**视觉语言模型实现** // **`2D image pre-trained detectors`** and **`vision-language models`**. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ 从二维预训练的检测器中定位三维对象 // localize 3D objects from **`2D pre-trained detectors`**, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  ✔️ 通过连接文本和点云嵌入来对检测到的对象进行分类 // classify the detected objects by connecting text and **`point-cloud embeddings`**. <br>
 &nbsp;
 </p>
         </td>
@@ -112,7 +111,7 @@
 #### Method:（和·framework的序号顺序是一致的）
 💡**① 【Localization 从二维预训练的检测器中获得定位能力 有展开】** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 直接使用二维预训练的检测器在相应的图像中生成一系列二维边界框或二维实例掩码 // directly take **`2D image pre-trained detector`** to generate a series of 2D bounding boxes or 2D instance masks in the corresponding images.  <br>
-&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the **`predicted 2D bounding boxes`** as the **`pseudo bounding box`** of the point-cloud detector after transforming the **`frustum`** into relatively tight bounding box according to the **point-cloud geometry**, as shown in Fig. 2.
+&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 根据点云的几何形状将棱台（取景框看fig2）转换为相对紧密的边界盒后 → 预测的二维边界盒作为点云探测器的伪边界盒 // use the **`predicted 2D bounding boxes`** as the **`pseudo bounding box`** of the point-cloud detector after transforming the **`frustum`** into relatively tight bounding box according to the **point-cloud geometry**, as shown in Fig. 2. 
 
 <div align="center" id="fig8">
     <img src="https://raw.githubusercontent.com/oneHFR/xiaoxiaowu.github.io/refs/heads/main/OVD_files/img/1-fig2.png" width="500">
@@ -120,18 +119,16 @@
 </div>
 &nbsp;
 
-<br>
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 没有使用 class labels predicted by **`2D image pre-trained detector`** <br>
+
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 使用粗糙的二维边界框或二维实例掩码来监督3D点云检测器来学习定位3D对象 // use the coarse 2D bounding boxes or 2D instance masks to supervise **`3D point-cloud detectors`** to learn localizing 3D objects. <br>
 
 
-💡**② 【Classification 跨模态将点云对象进行分类】**
-&nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 提出一种 **去偏三重态跨模态对比学习方法** 来将点云、图像和文本联系起来 // propose a **`de-biased triplet cross-modal contrastive learning method`** to connect the modalities among point-cloud, image, and text
-&nbsp;&nbsp;&nbsp;&nbsp;✔️ 使点云检测器能够将对象与相应的文本描述联系起来 // **`point-cloud detector`** is able to relate the objects with corresponding text descriptions. 
+
 💡**② 【Classification 跨模态将点云对象进行分类】** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;    ✔️ 提出一种 **去偏三重态跨模态对比学习方法** 来将点云、图像和文本联系起来 // propose a **`de-biased triplet cross-modal contrastive learning method`** to connect the modalities among point-cloud, image, and text <br>
 &nbsp;&nbsp;&nbsp;&nbsp;✔️ 使点云检测器能够将对象与相应的文本描述联系起来 // **`point-cloud detector`** is able to relate the objects with corresponding text descriptions. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;✔️ 在推理过程中，只使用点云检测器和文本提示 // During inference, only **`point-cloud detector`** and  **`text prompts`** are used.
+&nbsp;&nbsp;&nbsp;&nbsp;✔️ 在推理过程中，只使用点云检测器和文本提示 // During inference, only **`point-cloud detector`** and  **`text prompts`** are used. <br>
 
 &nbsp;
 </p>
@@ -185,18 +182,13 @@ $D^{img}$  = ${I_j}^{|D_{img}|}_{j=1}$
 
 【还有一些没写】<br>
 
-Perform
-open-vocabulary classification by comparing between $f_{1D}$ (text feature)
-and $f_{3D}$, where $f_{3D}$ represents 
+Perform open-vocabulary classification by comparing between $f_{1D}$ (text feature) and $f_{3D}$, where $f_{3D}$ represents 
 
 
 #### 3.3 Learn to Localize 3D Objects from 2D Pre-trained Detector
-1. 对于$D^{pc}$和$D^{img}$一对图像与点云 ➡️ 2D预训练探测器首先预测一系列的2D边界框或实例掩码 // For a pair of image and point-cloud from
-$D^{pc}$ and $D^{img}$ ➡️ 2D pre-trained detectors first predict a series of 2D bounding boxes or instance masks, if available.
+1. 对于$D^{pc}$和$D^{img}$一对图像与点云 ➡️ 2D预训练探测器首先预测一系列的2D边界框或实例掩码 // For a pair of image and point-cloud from $D^{pc}$ and $D^{img}$ ➡️ 2D pre-trained detectors first predict a series of 2D bounding boxes or instance masks, if available.
 
-2. 将2D边界框反向投影到三维空间 ➡️ 得到3D框 // Back-project the 2D bounding box into 3D
-space ➡️ the frustum（棱台状）3D box that could not
-tightly enclose the 3D object, as shown in [Fig. 2](#fig8)
+2. 将2D边界框反向投影到三维空间 ➡️ 得到3D框 // Back-project the 2D bounding box into 3D space ➡️ the frustum（棱台状）3D box that could not tightly enclose the 3D object, as shown in [Fig. 2](#fig8)
 
 3. 缩小三维边界框 ➡️ 利用点云的几何形状 ➡️ 对棱台内的三维点进行聚类 ➡️ 去除背景点和离群点 // Shrink the 3D bounding box ➡️ leverage the geometry of the point-cloud ➡️ perform clustering on points inside ➡️ remove background and outlier points.
 
@@ -216,11 +208,9 @@ loss used in [3DETR](https://openaccess.thecvf.com/content/ICCV2021/papers/Misra
 
 #### 3.4 Learn to Classify 3D Objects from 2D Pre-trained vision-language Model
 
-1. 指导模型根据文本提示从本地边界框中找对应物体 // guide the model to find the objects of interest from localized bounding boxes according
-to the text prompting.
+1. 指导模型根据文本提示从本地边界框中找对应物体 // guide the model to find the objects of interest from localized bounding boxes according to the text prompting.
 
-2. 以图像模态为中介，提出一种去偏三重态交叉模态对比学习（DTCC 文中有详解 此处略）来连接文本和点云 // Take image modality as
-the intermediary ➡️ a De-biased Triplet Cross Modal Contrastive Learning (DTCC 文中有详解 此处略) ➡️ connect text and point-cloud
+2. 以图像模态为中介，提出一种去偏三重态交叉模态对比学习（DTCC 文中有详解 此处略）来连接文本和点云 // Take image modality as the intermediary ➡️ a De-biased Triplet Cross Modal Contrastive Learning (DTCC 文中有详解 此处略) ➡️ connect text and point-cloud
 
 #### 3.5 Synopsis Explain (主要解释这个图来串讲上面的method)
 1. 训练过程中[**3DETR?**] ➡️ 得到点云预测是一系列具有$ROI$特征$f_{3D}$的3D边界框 $b^{3D}$
